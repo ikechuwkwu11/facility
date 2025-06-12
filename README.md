@@ -1,45 +1,71 @@
-Flask Facility Booking API
-This is a Flask-based RESTful API that allows users to register, log in, view facilities, book them, and manage both facilities and bookings. It uses Flask-Login for session handling and SQLite as the database via SQLAlchemy.
+# 🏢 Flask Facility Booking API
+A simple and secure RESTful API built with Flask for managing facilities and user bookings. This app supports user registration/login, facility creation, and session-protected booking features.
 
-Features
-- User Registration & Login (Session-based)
-- Facility Management (Add, View, Edit, Delete)
-- Booking System with Start/End Times
-- Route Protection (Booking requires login)
-- SQLite Database
+Ideal for systems that manage:
+- Gym or studio reservations
+- Meeting room bookings
+- Event or venue scheduling
 
-Tech Stack
-- Python 
-- Flask
-- Flask-Login
-- SQLAlchemy
-- SQLite (default database)
+## ✅ Features
+- User Authentication
+-Register new users
+-Login with session support using Flask-Login
 
-Facility Management
-- View All Facilities
-- GET /api/facility
+## 🏢 Facility Management
+- Add new facilities
+- View all or individual facilities
+- Edit or delete facility data
 
-- View Single Facility
-- GET /api/facility_single/<facility_id>
+## 📅 Booking System
+- Create bookings with start/end times
+- View all bookings or a specific booking
+- Login required to book
 
-- Add a New Facility
-- POST /api/update_facility
+🔒 Protected Routes
+- Only authenticated users can create bookings
 
-Booking Management
-- View All Bookings
-- GET /api/booking
+🗃️ Database
+- Data persisted via SQLite and SQLAlchemy ORM
 
-- View Single Booking
-- GET /api/booking_single/<booking_id>
+## 🧰 Tech Stack
+- Component	Tool
+- Language	Python
+- Web Framework	Flask
+- Auth Handling	Flask-Login
+- ORM	SQLAlchemy
+- Database	SQLite (default)
 
-- Create a Booking (Login Required)
-- POST /api/update_booking
+## 🔧 API Endpoints
+- Facility Management
+- Method	Route	Description
+- GET	/api/facility	View all facilities
+- GET	/api/facility_single/<facility_id>	View one facility
+- POST	/api/update_facility	Add a new facility
 
-Sample Test Sequence
-- Register user → /api/register
-- Login → /api/login
-- Add facility → /api/update_facility
-- View facilities → /api/facility
-- Book facility → /api/update_booking
-- View bookings → /api/booking
+## 📝 Booking Management
+- Method	Route	Description
+- GET	/api/booking	View all bookings
+- GET	/api/booking_single/<booking_id>	View one booking
+- POST	/api/update_booking	Create a new booking
 
+- Note: /api/update_booking requires the user to be logged in.
+
+## 👥 User Authentication
+- Method	Route	Description
+- POST	/api/register	Register a new user
+- POST	/api/login	Login and start session
+
+## 🧪 Sample Test Flow
+- Register a user: POST /api/register
+- Log in as the user: POST /api/login
+- Add a facility: POST /api/update_facility
+- View all facilities: GET /api/facility
+- Book a facility :POST /api/update_booking
+- View bookings: GET /api/booking
+
+## 🛡️ To-Do & Improvements
+- Add admin interface for managing facilities and bookings
+- Implement booking conflict validation
+- Add logout route
+- Switch to JWT or OAuth2 for token-based auth
+- Add date filtering and availability checking
