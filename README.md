@@ -28,32 +28,39 @@ Ideal for systems that manage:
 - Data persisted via SQLite and SQLAlchemy ORM
 
 ## 🧰 Tech Stack
-- Component	Tool
-- Language	Python
-- Web Framework	Flask
-- Auth Handling	Flask-Login
-- ORM	SQLAlchemy
-- Database	SQLite (default)
+| Component     | Tool/Technology  |
+| ------------- | ---------------- |
+| Language      | Python           |
+| Web Framework | Flask            |
+| Auth Handling | Flask-Login      |
+| ORM           | SQLAlchemy       |
+| Database      | SQLite (default) |
+
 
 ## 🔧 API Endpoints
-- Facility Management
-- Method	Route	Description
-- GET	/api/facility	View all facilities
-- GET	/api/facility_single/<facility_id>	View one facility
-- POST	/api/update_facility	Add a new facility
+| Method | Route                       | Description            |
+| ------ | --------------------------- | ---------------------- |
+| GET    | `/api/facility`             | View all facilities    |
+| GET    | `/api/facility_single/<id>` | View one facility      |
+| POST   | `/api/update_facility`      | Add or update facility |
+
 
 ## 📝 Booking Management
-- Method	Route	Description
-- GET	/api/booking	View all bookings
-- GET	/api/booking_single/<booking_id>	View one booking
-- POST	/api/update_booking	Create a new booking
+| Method | Route                      | Description                                |
+| ------ | -------------------------- | ------------------------------------------ |
+| GET    | `/api/booking`             | View all bookings                          |
+| GET    | `/api/booking_single/<id>` | View one booking                           |
+| POST   | `/api/update_booking`      | Create a new booking 🛑 *(requires login)* |
+
 
 - Note: /api/update_booking requires the user to be logged in.
 
 ## 👥 User Authentication
-- Method	Route	Description
-- POST	/api/register	Register a new user
-- POST	/api/login	Login and start session
+| Method | Route           | Description              |
+| ------ | --------------- | ------------------------ |
+| POST   | `/api/register` | Register new user        |
+| POST   | `/api/login`    | Log in and start session |
+
 
 ## 🧪 Sample Test Flow
 - Register a user: POST /api/register
